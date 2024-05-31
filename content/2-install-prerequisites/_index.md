@@ -77,7 +77,7 @@ To integrate the `Gitea` operator into your Operator catalog you need to access 
 - On the top right click on your username and then **Copy login command** to copy your login token
 - On you local machine open a terminal and login with the `oc` command you copied above, you may need to add **--insecure-skip-tls-verify** at the end of the line
 
-Or, if working on a Red Hat RHPDS environment:
+Or, if working on a Red Hat Demo (RHDS) environment:
 
 - Use the information provided to login to your bastion host via SSH
 - When logged in as `lab-user` you will be able to run `oc` commands without additional login.
@@ -162,7 +162,7 @@ The image that we have just deployed was pushed to the internal OpenShift Regist
 Quay installation is done through an operator, too:
 
 - In **Operators->OperatorHub** filter for `Quay`
-- Install the **Red Hat Quay** Operator with the default settings
+- Install the **Red Hat Quay** Operator in version `stable-3.8`. with the default settings  TODO : Update this documentation to a later Quay version
 - Create a new project called `quay` at the top Project selection menu
 - While in the project `quay` go to **Administration->LimitRanges** and delete the `quay-core-resource-limits`
   {{< figure src="../images/delete-limit-range.png?width=45pc&classes=border,shadow" title="Click image to enlarge" >}}
@@ -199,7 +199,7 @@ Reconfiguring Quay takes some time. The easiest way to determine if it's been fi
 To synchronize the internal default OpenShift Registry with the Quay Registry, **Quay Bridge** is used.
 
 - In the OperatorHub of your cluster, search for the **Quay Bridge** Operator
-  - Install it with default settings
+  - Install it with default settings in version `stable-3.8`.  TODO : Update this documentation to a later Quay version
 
 Now we finally create an **Quay Bridge** instance. :
 
